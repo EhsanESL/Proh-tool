@@ -484,7 +484,7 @@ def process_script5(filename_with_identifier, combined_presentation): # Script5:
     # Main function
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python RunAll.py <filename>")
+        print("Usage: python3 RunAll.py <filename>")
         sys.exit(1)
 
     filename_with_identifier = sys.argv[1]
@@ -501,5 +501,4 @@ if __name__ == "__main__":
     logger.info(f"Combined presentation saved successfully: {combined_presentation_path}")
     print(f'All scripts have been executed and their outputs have been combined into one PowerPoint presentation: "{combined_presentation_path}"')
 
-# the first 3 scripts works well every time you want to execute this code run the following:python RunAll.py uploads\make_car_d27a592c.csv
-#after other alternation I will get back and finalise this code                  
+                  
