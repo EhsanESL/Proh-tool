@@ -1,0 +1,12 @@
+pip
+Flask
+nltk
+python-pptx
+spacy
+pandas
+openpyxl
+gunicorn
+
+
+
+

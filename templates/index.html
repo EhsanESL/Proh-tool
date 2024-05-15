@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="color-scheme" content="light only">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Correct link tags for JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript (bundle includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/color-modes.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/7d65b0569c.js" crossorigin="anonymous"></script>
+
+    <title>PrOH Tool<sup>&copy;</sup></title>
+
+    <style>
+        .topheader {
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+
+<header class="topheader">
+    <div class="d-flex align-items-center  pb-3 mb-3 border-bottom justify-content-md-center">
+        <!-- <a href="index.html" class="link-body-emphasis text-decoration-none "><span class="fs-4"> -->
+                <h2>PrOH Tool<sup>&copy;</sup></h2>
+            <!-- </span></a> -->
+
+    </div>
+</header>
+
+<body>
+
+    <div class="container mx-auto d-flex column justify-content-center">
+
+        <div class="column col-lg-10 justify-content-center">
+
+            <div class="column  mb-2 mx-auto  ">
+                <div class="d-flex">
+                    <button id="newbtn" class="w-100 btn btn-outline-primary me-md-2" data-bs-toggle="modal"
+                        data-bs-target="#userinstruction">User Instructions</button>
+
+                    <button id="newbtn" class="w-100 btn btn-outline-primary me-md-2 " type="button"
+                        onclick="resetPage()">New</button>
+                </div>
+
+            <!-- User Instruction Modal -->
+            <div class="modal fade " id="userinstruction" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container ">
+                                <div class="row justify-content-center">
+                                    <div class="column col-lg-10 justify-content-center">
+                                        <h4 class="text-center">PrOH Tool<sup>&copy;</sup> User Instructions</h4><br>
+                                        <h6 >A. Filling in the MS Excel SIPOC table with process data</h6>
+                                        <ol>
+                                            <li>Once downloaded make column widths of the SIPOC table suitable for your own use</li>
+                                            <li>The top row of the SIPOC table contains the heading of the SIPOC table and does not become
+                                                part of the PrOH Model</li>
+                                            <li>The second row down forms the core process statement of the PrOH Model</li>
+                                            <li>Add further lines of the SIPOC table</li>
+                                            <li>Decision bubbles should be written as seen below (Figure 1) where words in brackets become
+                                                sub-nodes and the blank line means that blank cells are the same as the cells above and so do
+                                                not need to be repeated</li>
+                                            <li>All outputs should also be shown as inputs so that there are no loose ends in the logic of the
+                                                SIPOC table.</li>
+                                        </ol>
+                                        <p>Once completed it is a good idea to use ‘save as’ to save your file as a MS Excel file to preserve
+                                            your personal formatting preferences. A simple example about making a car is given in Figure 1.
+                                            Once ready to upload as a .csv file do so but note that this will remove any personal formatting
+                                            preferences you may have made to the SIPOC Table.</p>
+                                            <img src="../static/figure1.png" class="img-fluid" alt="Figure1"><br>
+                                            <h6 class="text-center">Figure 1: Example of filled in SIPOC table with personal formatting preferences</h6><br>
+                                            <p>PrOH Tool performs a verification check on the filled in SIPOPC Table .csv file and if it is not filled in
+                                            correctly PrOH Tool<sup>&copy;</sup> will not allow the MS PowerPoint with the draft PrOH Model to be downloaded.
+                                            Further changes can be made to the data by returning to your MS Excel version (.xlsx) of the SIPOC file
+                                            and repeating activities from Steps 2 onwards. It is not necessary to start with a new empty template.
+                                            Remember to press the ‘New’ button on PrOH Tool<sup>&copy;</sup> before re-uploading.</p>
+                                        <br>
+                                        
+                                        <h6 >B. Completing the PrOH Model drawing from the downloaded draft PowerPoint Model</h6>
+                                        <ol>
+                                            <li>Open the downloaded MS PowerPoint file. Figure 2 is an example showing elements from
+                                                Figure 1 spread across five different slides.</li>
+                                            <li>Cut and paste elements onto a single slide removing any duplicated elements</li>
+                                            <li>Create a title which needs to be the same as the central part of the core process statement</li>
+                                            <li>Add connecting arrows – thicker ones for the core process statement and thinner ones for the
+                                                non-core process arrow links and place verb phrases on the arrow links</li>
+                                            <li>Adapt text to make a meaningful model that meets with PrOH Model rules and guidelines</li>
+                                            <li>Make the model look appealing. Figure 3 is an example created from elements in Figure 2.</li>
+                                        </ol>
+                                        <img src="../static/figure2.png" class="img-fluid" alt="Figure2"><br>
+                                        <h6 class="text-center">Figure 2: Downloaded draft of PrOH Model elements</h6><br>
+                                        <img src="../static/figure3.png" class="img-fluid" alt="Figure3"><br>
+                                        <h6 class="text-center">Figure 3: Finessed PrOH Model produced from PrOH Model elements</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="column card shadow mb-2 mx-auto  ">
+                <div class="card-body p-5">
+                    <div class="d-flex justify-content-sm-between align-items-center me-md-2">
+                        <h6>1. Download SIPOC Table Template</h6>
+                        <button id="newbtn" class="btn btn-primary " type="button" style="width: 150px;"
+                            onclick="SIPOCTableDownload()">Download</button>
+                        <a id="downloadLink" href="{{ url_for('static', filename='SipocTableTemplate.xlsx') }}"
+                            style="display: none;"></a>
+                    </div><br>
+                </div>
+            </div>
+
+            <div class="column card shadow mb-2 mx-auto  ">
+                <div class="card-body p-5">
+
+                    <div class="d-flex justify-content-between ">
+                        <div class="flex-row me-md-2">
+                            <form id="fileupload" class="mb-3 d-flex justify-content-sm-between align-items-center"
+                                action="/upload" method="post" enctype="multipart/form-data">
+                                <h6>2. Upload Completed SIPOC Table (.xlsx)</h6>
+                        </div>
+                        <div class="d-flex justify-content-end me-md-2">
+                            <div><input class="form-control" id="fileInput" type="file" name="file"></div>
+                            <div><button id="uploadstbtn" class="btn btn-primary" type="button" style="width: 150px;"
+                                    onclick="ConsentModal()">Upload</button></div>
+                        </div>
+
+
+                        <button type="button" id="ConsentModalbtn" class="btn btn-primary " data-bs-toggle="modal"
+                            data-bs-target="#consentform" style="display: none;">hidden modal button</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="consentform" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="consentformLabel">User Consent</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        By uploading this file, you consent to us processing your data contained
+                                        within it. We will use this information solely for the purpose of the
+                                        requested service. You have the right to withdraw your consent at any time.
+                                        For more details on how we handle your data, please refer to our privacy
+                                        policy.</div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            onclick="declineuploadmodal()">Decline</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                            onclick="uploadFile()">Accept</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mb-2" id="uploadStatus" style="color: red;">
+                        {{ upload_status }}
+                    </div>
+
+                    </form>
+
+                    <div style="height: 4px" class="progress">
+                        <div id="progressBarst" role="progressbar" aria-label="Success example" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100" style="width: 5%" class="progress-bar bg-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column card shadow mb-2 mx-auto  ">
+                <div class="card-body p-5">
+                    <div class="d-flex justify-content-sm-between align-items-center me-md-2">
+                        <h6>3. Download Draft PrOH Model (.PPTX)</h6>
+                        <button id="downloadall" class="btn btn-primary disabled" type="button"
+                            onclick="downloadallbtn()" style="width: 150px;">Download</button>
+                    </div><br>
+                    <div style="height: 4px" class="progress">
+                        <div id="progressBarall" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 5%" class="progress-bar bg-success"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="column card shadow">
+                <div class="card-body p-5 ">
+                    <div>
+                        <h6>Option files (.PPTX):</h6>
+                        <div class="d-flex justify-content-sm-between pt-3 align-items-center">
+                            <div class="d-flex"><i class="fa-solid fa-plus" style="margin-right:9px;"></i>
+                                <h6>Download PowerPoint Core Process Statement</h6>
+                            </div>
+                            <button id="powerpointbtn" class="btn btn-primary me-md-2 disabled" type="button"
+                                onclick="downloadppbtn()" style="width: 150px;">Download</button>
+                        </div>
+
+                        <div class="d-flex justify-content-sm-between pt-3 align-items-center">
+                            <div class="d-flex"><i class="fa-solid fa-plus" style="margin-right:9px;"></i>
+                                <h6>Download Non-Core Process Statement Bubbles</h6>
+                            </div>
+                            <button id="processstatementbtn" class="btn btn-primary me-md-2 disabled" type="button"
+                                onclick="downloadpsbtn()" style="width: 150px;">Download</button>
+                        </div>
+
+                        <div class="d-flex justify-content-sm-between pt-3 align-items-center">
+                            <div class="d-flex"><i class="fa-solid fa-plus" style="margin-right:9px;"></i>
+                                <h6>Download Sub-bubbles</h6>
+                            </div>
+                            <button id="Subbubblesbtn" class="btn btn-primary me-md-2 disabled" type="button"
+                                onclick="downloadsbbtn()" style="width: 150px;">Download</button>
+                        </div>
+
+                        <div class="d-flex justify-content-sm-between pt-3 align-items-center">
+                            <div class="d-flex"><i class="fa-solid fa-plus" style="margin-right:9px;"></i>
+                                <h6>Download Decision Bubbles</h6>
+                            </div>
+                            <button id="decisionnodesbtn" class="btn btn-primary me-md-2 disabled" type="button"
+                                onclick="downloaddnbtn()" style="width: 150px;">Download</button>
+                        </div>
+
+                        <div class="d-flex justify-content-sm-between pt-3 mb-3 align-items-center">
+                            <div class="d-flex"><i class="fa-solid fa-plus" style="margin-right:9px;"></i>
+                                <h6>Download Verbs Phrases for Link Arrows</h6>
+                            </div>
+                            <button id="verbscollectionbtn" class="btn btn-primary me-md-2 disabled" type="button"
+                                onclick="downloadVerbspptx()" style="width: 150px
+                                    ;">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div> -->
+
+    </div>
+    <script>
+        function SIPOCTableDownload() {
+
+            document.getElementById('newbtn').disabled = true;
+            document.getElementById('downloadLink').click();
+            document.getElementById('newbtn').textContent = "Downloaded";
+
+        }
+        function ConsentModal() {
+
+            // Disable the button
+            document.getElementById("uploadstbtn").disabled = true;
+
+            // Replace the button content with the loading spinner
+            document.getElementById("uploadstbtn").innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span>Uploading</span>`;
+
+            // Click the hidden button to initiate upload
+            document.getElementById('ConsentModalbtn').click();
+        }
+
+        function declineuploadmodal() {
+            // Enable the button
+            document.getElementById("uploadstbtn").disabled = false;
+
+            // Restore the original inner HTML content of the button
+            document.getElementById("uploadstbtn").innerHTML = "Upload";
+        }
+
+        function uploadFile() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var formData = new FormData();
+            formData.append('file', file);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+
+                        // Update the upload status based on the response from the server
+                        var response = JSON.parse(xhr.responseText);
+                        if (response && response.message) {
+                            document.getElementById('uploadStatus').textContent = response.message;
+                            document.getElementById('progressBarst').style.width = '100%';
+                            document.getElementById('uploadstbtn').textContent = "Uploaded";
+                            // document.getElementById('powerpointbtn').classList.remove('disabled');
+                            // document.getElementById('processstatementbtn').classList.remove('disabled');
+                            // document.getElementById('Subbubblesbtn').classList.remove('disabled');
+                            // document.getElementById('decisionnodesbtn').classList.remove('disabled');
+                            // document.getElementById('verbscollectionbtn').classList.remove('disabled');
+                            document.getElementById('downloadall').classList.remove('disabled');
+                        }
+                        // Handle success
+                    } else {
+                        // Handle error
+                        console.error('Upload failed', xhr.status);
+                        if (xhr.responseText) {
+                        console.error('Error:', xhr.responseText);
+                        document.getElementById('uploadStatus').textContent = 'Upload failed: ' + xhr.responseText;
+                        } else {
+                        document.getElementById('uploadStatus').textContent = 'Upload failed with status: ' + xhr.status;
+                        }
+
+
+                    }
+                }
+            };
+            xhr.send(formData);
+        }
+
+        function downloadallbtn() {
+            document.getElementById('progressBarall').style.width = '100%';
+            document.getElementById('downloadall').disabled = true;
+            document.getElementById('downloadall').textContent = "Downloaded";
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/download_all_files', true);
+            xhr.responseType = 'blob';
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+                    var link = document.createElement('a');
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = 'Output_presentation.pptx';
+                    link.click();
+                }
+            };
+
+            xhr.send();
+        }
+
+
+        // function downloadppbtn() {
+        //     document.getElementById('powerpointbtn').disabled = true;
+        //     document.getElementById('powerpointbtn').textContent = "Downloaded";
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', '/download_pptx', true);
+        //     xhr.responseType = 'blob';
+        //     xhr.onload = function () {
+        //         if (xhr.status === 200) {
+        //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+        //             var link = document.createElement('a');
+        //             link.href = window.URL.createObjectURL(blob);
+        //             link.download = 'Output_presentation.pptx';
+        //             link.click();
+        //         }
+        //     };
+        //     xhr.send();
+        // }
+
+
+        // function downloadpsbtn() {
+        //     document.getElementById('processstatementbtn').disabled = true;
+        //     document.getElementById('processstatementbtn').textContent = "Downloaded";
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', '/download_NC_Statement', true);
+        //     xhr.responseType = 'blob';
+        //     xhr.onload = function () {
+        //         if (xhr.status === 200) {
+        //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+        //             var link = document.createElement('a');
+        //             link.href = window.URL.createObjectURL(blob);
+        //             link.download = 'NC_Statement.pptx';
+        //             link.click();
+        //         }
+        //     };
+        //     xhr.send();
+        // }
+
+        // function downloadsbbtn() {
+        //     document.getElementById('Subbubblesbtn').disabled = true;
+        //     document.getElementById('Subbubblesbtn').textContent = "Downloaded";
+
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', '/download_Sub_bubbles', true);
+        //     xhr.responseType = 'blob';
+        //     xhr.onload = function () {
+        //         if (xhr.status === 200) {
+        //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+        //             var link = document.createElement('a');
+        //             link.href = window.URL.createObjectURL(blob);
+        //             link.download = 'Sub_bubbles.pptx';
+        //             link.click();
+        //         }
+        //     };
+        //     xhr.send();
+        // }
+
+        // function downloaddnbtn() {
+        //     document.getElementById('decisionnodesbtn').disabled = true;
+        //     document.getElementById('decisionnodesbtn').textContent = "Downloaded";
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', '/download_decision_bubbles', true);
+        //     xhr.responseType = 'blob';
+        //     xhr.onload = function () {
+        //         if (xhr.status === 200) {
+        //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+        //             var link = document.createElement('a');
+        //             link.href = window.URL.createObjectURL(blob);
+        //             link.download = 'Decision_Bubbles.pptx';
+        //             link.click();
+        //         }
+        //     };
+        //     xhr.send();
+        // }
+
+
+
+        // function downloadVerbspptx() {
+        //     document.getElementById('verbscollectionbtn').disabled = true;
+        //     document.getElementById('verbscollectionbtn').textContent = "Downloaded";
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', '/download_verbs', true);
+        //     xhr.responseType = 'blob';
+        //     xhr.onload = function () {
+        //         if (xhr.status === 200) {
+        //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+        //             var link = document.createElement('a');
+        //             link.href = window.URL.createObjectURL(blob);
+        //             link.download = 'verbs.pptx';
+        //             link.click();
+        //         }
+        //     };
+        //     xhr.send();
+        // }
+
+
+        function resetPage() {
+            window.location.href = "/";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
