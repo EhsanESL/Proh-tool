@@ -66,7 +66,7 @@ def upload():
         logging.info(f"Filename without extension: {filename_without_extension}")
 
         # Call the script with the uploaded file as an argument
-        subprocess.run(['python', 'RunAll.py', csv_file_path])
+        subprocess.run(['python3', 'RunAll.py', csv_file_path])
         logging.info("RunAll.py executed successfully.")
 
         return jsonify({'message': 'Upload successful'}), 200
