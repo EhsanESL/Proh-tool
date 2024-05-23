@@ -310,11 +310,6 @@
                                 document.getElementById('uploadStatus').textContent = response.message;
                                 document.getElementById('progressBarst').style.width = '100%';
                                 document.getElementById('uploadstbtn').textContent = "Uploaded";
-                                // document.getElementById('powerpointbtn').classList.remove('disabled');
-                                // document.getElementById('processstatementbtn').classList.remove('disabled');
-                                // document.getElementById('Subbubblesbtn').classList.remove('disabled');
-                                // document.getElementById('decisionnodesbtn').classList.remove('disabled');
-                                // document.getElementById('verbscollectionbtn').classList.remove('disabled');
                                 document.getElementById('downloadall').classList.remove('disabled');
                             }
                             // Handle success
@@ -355,102 +350,6 @@
 
                 xhr.send();
             }
-
-
-            // function downloadppbtn() {
-            //     document.getElementById('powerpointbtn').disabled = true;
-            //     document.getElementById('powerpointbtn').textContent = "Downloaded";
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.open('GET', '/download_pptx', true);
-            //     xhr.responseType = 'blob';
-            //     xhr.onload = function () {
-            //         if (xhr.status === 200) {
-            //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
-            //             var link = document.createElement('a');
-            //             link.href = window.URL.createObjectURL(blob);
-            //             link.download = 'Output_presentation.pptx';
-            //             link.click();
-            //         }
-            //     };
-            //     xhr.send();
-            // }
-
-
-            // function downloadpsbtn() {
-            //     document.getElementById('processstatementbtn').disabled = true;
-            //     document.getElementById('processstatementbtn').textContent = "Downloaded";
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.open('GET', '/download_NC_Statement', true);
-            //     xhr.responseType = 'blob';
-            //     xhr.onload = function () {
-            //         if (xhr.status === 200) {
-            //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
-            //             var link = document.createElement('a');
-            //             link.href = window.URL.createObjectURL(blob);
-            //             link.download = 'NC_Statement.pptx';
-            //             link.click();
-            //         }
-            //     };
-            //     xhr.send();
-            // }
-
-            // function downloadsbbtn() {
-            //     document.getElementById('Subbubblesbtn').disabled = true;
-            //     document.getElementById('Subbubblesbtn').textContent = "Downloaded";
-
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.open('GET', '/download_Sub_bubbles', true);
-            //     xhr.responseType = 'blob';
-            //     xhr.onload = function () {
-            //         if (xhr.status === 200) {
-            //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
-            //             var link = document.createElement('a');
-            //             link.href = window.URL.createObjectURL(blob);
-            //             link.download = 'Sub_bubbles.pptx';
-            //             link.click();
-            //         }
-            //     };
-            //     xhr.send();
-            // }
-
-            // function downloaddnbtn() {
-            //     document.getElementById('decisionnodesbtn').disabled = true;
-            //     document.getElementById('decisionnodesbtn').textContent = "Downloaded";
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.open('GET', '/download_decision_bubbles', true);
-            //     xhr.responseType = 'blob';
-            //     xhr.onload = function () {
-            //         if (xhr.status === 200) {
-            //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
-            //             var link = document.createElement('a');
-            //             link.href = window.URL.createObjectURL(blob);
-            //             link.download = 'Decision_Bubbles.pptx';
-            //             link.click();
-            //         }
-            //     };
-            //     xhr.send();
-            // }
-
-
-
-            // function downloadVerbspptx() {
-            //     document.getElementById('verbscollectionbtn').disabled = true;
-            //     document.getElementById('verbscollectionbtn').textContent = "Downloaded";
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.open('GET', '/download_verbs', true);
-            //     xhr.responseType = 'blob';
-            //     xhr.onload = function () {
-            //         if (xhr.status === 200) {
-            //             var blob = new Blob([xhr.response], { type: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
-            //             var link = document.createElement('a');
-            //             link.href = window.URL.createObjectURL(blob);
-            //             link.download = 'verbs.pptx';
-            //             link.click();
-            //         }
-            //     };
-            //     xhr.send();
-            // }
-
 
             function resetPage() {
                 window.location.href = "/";
