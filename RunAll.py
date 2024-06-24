@@ -18,7 +18,7 @@ logger = logging.getLogger('merged_logger')
 logger.setLevel(logging.INFO)
 
 # Create a file handler to output logs to a file
-file_handler = logging.FileHandler('merged_script.log')
+file_handler = logging.FileHandler('app.log')
 file_handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(formatter)
