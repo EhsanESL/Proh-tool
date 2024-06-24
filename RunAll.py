@@ -34,12 +34,8 @@ def process_script1(filename_with_identifier, combined_presentation): #Script1:C
     try:
         logger.info("Processing Script 1")
 
-        filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        logger.info(f"Filename without extension: {filename_without_extension}")
-
         # Construct the complete file path
         file_path = os.path.join(filename_with_identifier)
-        logger.info(f"Uploaded filepath: {file_path}")
 
         with open(file_path, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
@@ -312,12 +308,9 @@ def process_script3(filename_with_identifier, combined_presentation): #Script3: 
 def process_script4(filename_with_identifier, combined_presentation): # Script4: Decision_Bubbles.py
     try:
         logger.info("Processing script4")
-        filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        logger.info(f"Filename without extension: {filename_without_extension}")
 
         # Construct the complete file path
         file_path = os.path.join(filename_with_identifier)
-        logger.info(f"Uploaded filepath: {file_path}")
 
         with open(file_path, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
