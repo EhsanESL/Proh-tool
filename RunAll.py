@@ -35,11 +35,9 @@ def process_script1(filename_with_identifier, combined_presentation): #Script1:C
         logger.info("Processing Script 1")
 
         filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        logger.info(f"Filename without extension: {filename_without_extension}")
 
         # Construct the complete file path
         file_path = os.path.join(filename_with_identifier)
-        logger.info(f"Uploaded filepath: {file_path}")
 
         with open(file_path, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
@@ -152,27 +150,19 @@ def process_script1(filename_with_identifier, combined_presentation): #Script1:C
                 textbox.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER  # Align the text to the center
                 left += box_width
                 top_margin -= box_height  # Move to the next line
-        # Save the PowerPoint presentation with the same identifier
-        # pptx_filename = os.path.join(filename_without_extension + '.pptx')
-        # combined_presentation.save(pptx_filename)
-        # logger.info("Output presentation is saved successfully.")
-        # logger.info(f"Output presentation path: {os.path.join(filename_without_extension + '.pptx')}")
-        # print(f'Second row of CSV file has been converted to an editable PowerPoint presentation: "{pptx_filename}"')
+        logger.info(f"Script1 is saved successfully: {os.path.join(filename_without_extension + '.pptx')}")
+
     except Exception as e:
         logging.error(f'An error occurred in Script 1: {str(e)}')
         
 def process_script2(filename_with_identifier, combined_presentation):  # Script2: Non-Core-Process-Statment
     try:
+        logger.info("Processing Script 2")
         # Get the file name with the identifier from the command-line arguments
         filename_with_identifier = sys.argv[1]
-        logger.info("looking for the filepath")
-
         filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        logger.info(f"Filename without extension: {filename_without_extension}")
-
         # Construct the complete file path
         file_path = os.path.join(filename_with_identifier)
-        logger.info(f"Uploaded filepath: {file_path}")
 
         with open(file_path, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
@@ -237,7 +227,8 @@ def process_script2(filename_with_identifier, combined_presentation):  # Script2
                     if left + node_width > Inches(10):
                         left = left_margin
                         top += node_height
-            j += 1      
+            j += 1    
+         logger.info("Script2 executed successfully")
     except Exception as e:
         # Log any exceptions that occur
         logging.error(f'An error occurred: {str(e)}')
@@ -246,9 +237,7 @@ def process_script3(filename_with_identifier, combined_presentation): #Script3: 
     try:
         logger.info("Processing Script 3")
         # Input CSV file name
-        # filename_with_identifier = sys.argv[1]
         filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        # file_path = os.path.join(filename_with_identifier)
 
         # List to store words between parentheses
         parentheses_words = []
@@ -315,10 +304,7 @@ def process_script3(filename_with_identifier, combined_presentation): #Script3: 
                 left = left_margin
                 top += node_height
 
-        # Save the PowerPoint file
-        # pptx_filename = os.path.join(filename_without_extension + '_subbubble' + '.pptx')
-        # combined_presentation.save(pptx_filename)
-        # logger.info("subbubble is saved successfully.")
+        logger.info("Script3 executed successfully")
 
     except Exception as e:
         logger.error(f'An error occurred: {str(e)}')
@@ -327,11 +313,9 @@ def process_script4(filename_with_identifier, combined_presentation): # Script4:
     try:
         logger.info("Processing script4")
         filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        logger.info(f"Filename without extension: {filename_without_extension}")
 
         # Construct the complete file path
         file_path = os.path.join(filename_with_identifier)
-        logger.info(f"Uploaded filepath: {file_path}")
 
         with open(file_path, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
@@ -417,7 +401,7 @@ def process_script4(filename_with_identifier, combined_presentation): # Script4:
                         left = Inches(0.5)
                         top += Inches(2)
 
-        logger.info("script3 executed successfully.")
+        logger.info("Script3 executed successfully.")
 
     except Exception as e:
         # Log any exceptions that occur
@@ -428,6 +412,7 @@ def process_script5(filename_with_identifier, combined_presentation): # Script5:
     file_path = os.path.join(filename_with_identifier)
     temp_csv_filename = filename_without_extension + '_verbs.csv'
     try:
+        logger.info("Processing Script 5")
         with open(file_path, 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
             rows = list(csv_reader)
@@ -476,7 +461,8 @@ def process_script5(filename_with_identifier, combined_presentation): # Script5:
             textbox.text_frame.text = cell_content
             textbox.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER  # Center align text
             top += cell_height
-        
+            
+        logger.info("Script5 executed successfully.")
     except Exception as e:
         logging.error(f'An error occurred: {str(e)}')
 
