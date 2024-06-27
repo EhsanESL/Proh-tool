@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Secret key for session
 
 # Configure logging
-logging.basicConfig(filename='/var/www/vhosts/prohmodeller.org/prohtool.prohmodeller.org/app.log', level=logging.INFO)
+logging.basicConfig(filename='app.log', level=logging.INFO)
 
 # Define upload status constants
 UPLOAD_SUCCESS = "File uploaded and processed successfully"
@@ -44,14 +44,14 @@ def upload():
         filename_with_identifier = f"{filename}_{unique_identifier}{extension}"
 
         # Save the file with the new filename
-        file_path = os.path.join('/var/www/vhosts/prohmodeller.org/prohtool.prohmodeller.org/uploads', filename_with_identifier)
+        file_path = os.path.join('uploads', filename_with_identifier)
         file.save(file_path)
         logging.info("Excel file saved successfully.")
 
         # Convert Excel to CSV
         excel_df = pd.read_excel(file_path)
         csv_filename = f"{filename}_{unique_identifier}.csv"
-        csv_file_path = os.path.join('/var/www/vhosts/prohmodeller.org/prohtool.prohmodeller.org/uploads', csv_filename)
+        csv_file_path = os.path.join('uploads', csv_filename)
         excel_df.to_csv(csv_file_path, index=False)
         logging.info("CSV file saved successfully.")
 
@@ -64,7 +64,7 @@ def upload():
         logging.info(f"Filename without extension: {filename_without_extension}")
 
         # Call the script with the uploaded file as an argument
-        subprocess.run(['python3', '/var/www/vhosts/prohmodeller.org/prohtool.prohmodeller.org/RunAll.py', csv_file_path])
+        subprocess.run(['python3', 'RunAll.py', csv_file_path])
         logging.info("RunAll.py is being executed.")
 
         return jsonify({'message': 'Upload successful'}), 200
@@ -91,7 +91,7 @@ def download_all_files():
         # Specify the path to the PowerPoint file
         filename_with_identifier = os.path.basename(file_path)
         filename_without_extension = os.path.splitext(filename_with_identifier)[0]
-        combined_file = os.path.join('/var/www/vhosts/prohmodeller.org/prohtool.prohmodeller.org/uploads', f"{filename_without_extension}_combined.pptx")
+        combined_file = os.path.join('uploads', f"{filename_without_extension}_combined.pptx")
 
         if os.path.exists(combined_file):
             # Return the file as an attachment
