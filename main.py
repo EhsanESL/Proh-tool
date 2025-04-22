@@ -57,7 +57,10 @@ def upload():
 
         # Store the file path in session
         session['file_path'] = csv_file_path
+        file_path= session['file_path']
         logging.info(f"Uploaded filepath: {csv_file_path}")
+        logging.info(f"Processing file located at: {file_path}")
+        
 
         # Construct the filename without the extension
         filename_without_extension = os.path.splitext(filename_with_identifier)[0]
