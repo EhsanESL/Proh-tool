@@ -107,4 +107,4 @@ def download_all_files():
         return jsonify({'error': 'An error occurred while downloading all files.'}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False, threaded=False)
