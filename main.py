@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['SESSION_COOKIE_SECURE'] = False  # Set to True if you use HTTPS
 app.config['SESSION_COOKIE_SAMESITE'] = "Lax"  # or "None" if cross-site requests
 app.config['SESSION_COOKIE_HTTPONLY'] = True  # Prevent JS access
-app.secret_key = os.urandom(24)  # Secret key for session
+app.secret_key = 'dskjfh83hf928hf98h3fh9823h9hf9'  # some long random string
 
 # Configure logging
 logging.basicConfig(filename='app.log', level=logging.INFO)
