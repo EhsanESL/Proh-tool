@@ -6,6 +6,10 @@ import uuid  # for generating unique identifiers
 import pandas as pd # for importing xlsx file
 
 app = Flask(__name__)
+# Tell Flask how to handle cookies better
+app.config['SESSION_COOKIE_SECURE'] = False  # Set to True if you use HTTPS
+app.config['SESSION_COOKIE_SAMESITE'] = "Lax"  # or "None" if cross-site requests
+app.config['SESSION_COOKIE_HTTPONLY'] = True  # Prevent JS access
 app.secret_key = os.urandom(24)  # Secret key for session
 
 # Configure logging
@@ -109,7 +113,4 @@ def download_all_files():
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False, threaded=False)
-# Tell Flask how to handle cookies better
-app.config['SESSION_COOKIE_SECURE'] = False  # Set to True if you use HTTPS
-app.config['SESSION_COOKIE_SAMESITE'] = "Lax"  # or "None" if cross-site requests
-app.config['SESSION_COOKIE_HTTPONLY'] = True  # Prevent JS access
+
