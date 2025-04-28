@@ -109,3 +109,7 @@ def download_all_files():
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False, threaded=False)
+# Tell Flask how to handle cookies better
+app.config['SESSION_COOKIE_SECURE'] = False  # Set to True if you use HTTPS
+app.config['SESSION_COOKIE_SAMESITE'] = "Lax"  # or "None" if cross-site requests
+app.config['SESSION_COOKIE_HTTPONLY'] = True  # Prevent JS access
